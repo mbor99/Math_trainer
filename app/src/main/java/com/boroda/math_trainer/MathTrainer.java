@@ -1,23 +1,30 @@
 package com.boroda.math_trainer;
 
 public class MathTrainer {
-    public Task generateTask(){
-
-        return new Task();
+    public Numbers generateNumbers() {
+        return new Numbers();
     }
-    public void sum(){
 
-    }
-    public void minus(){
-
-    }
-    public void multiple(){
+    public int sum() {
+        Numbers n = generateNumbers();
+        int correctResult = n.getFirst() + n.getSecond();
+        return correctResult;
 
     }
-    public void divade(){
+
+    public void minus() {
 
     }
-    public boolean calculate(){
+
+    public void multiple() {
+
+    }
+
+    public void divade() {
+
+    }
+
+    public boolean calculate() {
 
         return false;
     }

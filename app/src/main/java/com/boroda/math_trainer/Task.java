@@ -1,14 +1,15 @@
 package com.boroda.math_trainer;
 
 public class Task {
-    int first=0;
-    int second=0;
-    enum OPERATIONS {SUM, MINUS,MULTIPLE, DIVIDE }
+    int first;
+    int second;
+    TaskType taskType;
+    int result;
 
-    public Task() {
-        Random random = new Random();
-        this.first = random.;
-        this.second = random;
-        OPERATIONS operation=OPERATIONS.get(RANDOM.nextInt(OPERATIONS.size);
+    public Task(TaskType taskType) {
+        this.first = first;
+        this.second = second;
+        this.taskType = taskType;
+        this.result = result;
     }
 }
