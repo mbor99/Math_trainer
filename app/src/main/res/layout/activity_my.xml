@@ -6,13 +6,13 @@
     android:weightSum="1">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="21dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/taskView"
         android:layout_gravity="center_horizontal" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:id="@+id/button2"
+                android:id="@+id/button1"
                 android:layout_column="0"
                 android:layout_weight="1" />
 
@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="2"
-                android:id="@+id/button3"
+                android:id="@+id/button2"
                 android:layout_column="1"
                 android:layout_weight="1" />
 
@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="3"
-                android:id="@+id/button4"
+                android:id="@+id/button3"
                 android:layout_column="2"
                 android:layout_weight="1" />
         </TableRow>
@@ -62,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="4"
-                android:id="@+id/button9"
+                android:id="@+id/button4"
                 android:layout_column="0"
                 android:layout_weight="1" />
 
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="5"
-                android:id="@+id/button12"
+                android:id="@+id/button5"
                 android:layout_column="0"
                 android:layout_weight="1" />
 
@@ -78,7 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="6"
-                android:id="@+id/button11"
+                android:id="@+id/button6"
                 android:layout_column="1"
                 android:layout_weight="1" />
         </TableRow>
@@ -91,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="7"
-                android:id="@+id/button18"
+                android:id="@+id/button7"
                 android:layout_column="0"
                 android:layout_weight="1" />
 
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="8"
-                android:id="@+id/button10"
+                android:id="@+id/button8"
                 android:layout_column="1"
                 android:layout_weight="1" />
 
@@ -107,7 +107,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="9"
-                android:id="@+id/button17"
+                android:id="@+id/button9"
                 android:layout_weight="1"
                 android:layout_column="2" />
         </TableRow>
@@ -120,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button14"
+                android:id="@+id/button0"
                 android:layout_column="0"
                 android:layout_weight="1" />
 
@@ -128,22 +128,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Clear"
-                android:id="@+id/button15"
+                android:id="@+id/buttonClear"
                 android:layout_weight="1" />
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Check"
-                android:id="@+id/button16"
+                android:id="@+id/buttonCheck"
                 android:layout_weight="1" />
         </TableRow>
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-        </TableRow>
     </TableLayout>
 
     <TextView
@@ -157,7 +152,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Next Task"
-        android:id="@+id/button"
+        android:id="@+id/buttonNextTask"
         android:layout_weight="0.51" />
 
 </LinearLayout>
