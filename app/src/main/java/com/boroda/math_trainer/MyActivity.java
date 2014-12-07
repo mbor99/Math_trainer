@@ -40,10 +40,15 @@ public class MyActivity extends Activity {
         MathTrainer mathTrainer = new MathTrainer();
 
         initialyzeElements();
-        generatSumTask();
-//        taskView.setText("new task");
+        Task sumTask = generatSumTask();
+
+        taskView.setText(sumTask.first + " + " + sumTask.second);
 
 
+    }
+
+    private Task generatSumTask() {
+        return new Task(TaskType.SUM);
     }
 
     public Button.OnClickListener pressButton(final Button btn) {
