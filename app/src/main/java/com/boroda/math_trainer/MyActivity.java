@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -39,13 +40,25 @@ public class MyActivity extends Activity {
         MathTrainer mathTrainer = new MathTrainer();
 
         initialyzeElements();
-
+        generatSumTask();
+//        taskView.setText("new task");
 
 
     }
 
+    public Button.OnClickListener pressButton(final Button btn) {
 
-    private void initialyzeElements(){
+        Button.OnClickListener oclBtn = new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inputView.append(btn.getText());
+            }
+        };
+        return oclBtn;
+    }
+
+
+    private void initialyzeElements() {
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
@@ -63,6 +76,41 @@ public class MyActivity extends Activity {
         resultView = (TextView) findViewById(R.id.resultView);
         taskView = (TextView) findViewById(R.id.taskView);
         inputView = (TextView) findViewById(R.id.inputField);
+
+        Button.OnClickListener oclBtnClear = new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inputView.setText("");
+                resultView.setText("");
+            }
+        };
+        Button.OnClickListener oclBtnCheck = new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultView.setText("Правильно Неправильно");
+            }
+        };
+        Button.OnClickListener oclBtnNextTask = new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inputView.setText("");
+                resultView.setText("");
+            }
+        };
+
+        button0.setOnClickListener(pressButton(button0));
+        button1.setOnClickListener(pressButton(button1));
+        button2.setOnClickListener(pressButton(button2));
+        button3.setOnClickListener(pressButton(button3));
+        button4.setOnClickListener(pressButton(button4));
+        button5.setOnClickListener(pressButton(button5));
+        button6.setOnClickListener(pressButton(button6));
+        button7.setOnClickListener(pressButton(button7));
+        button8.setOnClickListener(pressButton(button8));
+        button9.setOnClickListener(pressButton(button9));
+        buttonClear.setOnClickListener(oclBtnClear);
+        buttonCheck.setOnClickListener(oclBtnCheck);
+        buttonNextTask.setOnClickListener(oclBtnNextTask);
     }
 
 
