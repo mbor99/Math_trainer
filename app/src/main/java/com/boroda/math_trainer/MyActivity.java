@@ -32,6 +32,8 @@ public class MyActivity extends Activity {
     TextView taskView;
     TextView inputView;
 
+    Task task;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +42,16 @@ public class MyActivity extends Activity {
         MathTrainer mathTrainer = new MathTrainer();
 
         initialyzeElements();
-        Task sumTask = generatSumTask();
 
-        taskView.setText(sumTask.first + " + " + sumTask.second);
+
+        task = generatSumTask();
+
 
 
     }
 
     private Task generatSumTask() {
+        taskView.setText(task.first + " + " + task.second);
         return new Task(TaskType.SUM);
     }
 
@@ -92,12 +96,19 @@ public class MyActivity extends Activity {
         Button.OnClickListener oclBtnCheck = new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultView.setText("Правильно Неправильно");
+
+                if (inputView.getText().equals(task.result)) {
+                    resultView.setText("Правильно, молодец!");
+                } else {
+                    resultView.setText("Неправильно");
+                }
+
             }
         };
         Button.OnClickListener oclBtnNextTask = new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                task=generatSumTask();
                 inputView.setText("");
                 resultView.setText("");
             }
