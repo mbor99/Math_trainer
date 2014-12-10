@@ -42,17 +42,17 @@ public class MyActivity extends Activity {
         MathTrainer mathTrainer = new MathTrainer();
 
         initialyzeElements();
-
+//        task = new Task(TaskType.SUM);
 
         task = generatSumTask();
-
 
 
     }
 
     private Task generatSumTask() {
+        task = new Task(TaskType.SUM);
         taskView.setText(task.first + " + " + task.second);
-        return new Task(TaskType.SUM);
+        return task;
     }
 
     public Button.OnClickListener pressButton(final Button btn) {
@@ -96,8 +96,10 @@ public class MyActivity extends Activity {
         Button.OnClickListener oclBtnCheck = new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String textViewValue = inputView.getText().toString();
+                String result = String.valueOf(task.result);
 
-                if (inputView.getText().equals(task.result)) {
+                if (textViewValue.equals(result)) {
                     resultView.setText("Правильно, молодец!");
                 } else {
                     resultView.setText("Неправильно");
@@ -108,7 +110,7 @@ public class MyActivity extends Activity {
         Button.OnClickListener oclBtnNextTask = new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                task=generatSumTask();
+                task = generatSumTask();
                 inputView.setText("");
                 resultView.setText("");
             }
