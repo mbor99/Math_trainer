@@ -6,11 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-
-import java.io.IOException;
-import java.util.List;
 
 
 public class MyActivity extends Activity {
@@ -41,16 +37,34 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
         MathTrainer mathTrainer = new MathTrainer();
 
-        initialyzeElements();
+        initializeElements();
 //        task = new Task(TaskType.SUM);
 
-        task = generatSumTask();
+        task = generateTask();
 
 
     }
 
-    private Task generatSumTask() {
+    private Task generateTask() {
+        TaskType taskType = TaskType.randomType();
+        task = new Task(taskType);
+        System.out.println(taskType);
+        if (taskType == TaskType.SUM) {
+            taskView.setText(task.first + " + " + task.second);
+        }
+        if (taskType == TaskType.MINUS) {
+            taskView.setText(task.first + " - " + task.second);
+        }
+        if (taskType == TaskType.MULTIPLE) {
+            taskView.setText(task.first + " * " + task.second);
+        }
+        return task;
+    }
+
+    private Task generateSumTask() {
         task = new Task(TaskType.SUM);
+
+
         taskView.setText(task.first + " + " + task.second);
         return task;
     }
@@ -67,7 +81,7 @@ public class MyActivity extends Activity {
     }
 
 
-    private void initialyzeElements() {
+    private void initializeElements() {
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
@@ -110,7 +124,7 @@ public class MyActivity extends Activity {
         Button.OnClickListener oclBtnNextTask = new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                task = generatSumTask();
+                task = generateTask();
                 inputView.setText("");
                 resultView.setText("");
             }
